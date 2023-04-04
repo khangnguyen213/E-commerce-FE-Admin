@@ -1,0 +1,11 @@
+.container {
+  padding: 80px 40px;
+  background-color: rgba(229, 238, 245, 0.705);
+}
+
+.history {
+  padding: 20px 20px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-bottom: 20px;
+}

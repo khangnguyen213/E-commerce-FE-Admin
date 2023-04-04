@@ -1,0 +1,44 @@
+.container {
+  padding: 80px 40px;
+  background-color: rgba(229, 238, 245, 0.705);
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.top button {
+  margin: 20px 0;
+}
+
+.history {
+  padding: 20px 20px;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.container .summary {
+  width: 40%;
+  margin: 20px 0;
+  display: flex;
+
+  /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  flex-direction: row;
+  justify-content: space-between; */
+}
+
+@media (max-width: 760px) {
+  .container .summary {
+    width: 100%;
+  }
+}
