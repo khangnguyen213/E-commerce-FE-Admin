@@ -109,7 +109,12 @@ const Products = () => {
                     </td>
                     <td>
                       {" "}
-                      <img src={value.img1} alt="..." width="160" />
+                      <img
+                        src={`data:${value.type1};charset=utf-8;base64,${value.img1}`}
+                        alt="..."
+                        width="160"
+                      />
+                      {/* <img src={value.img1} alt="..." width="160" /> */}
                     </td>
                     <td>
                       <h6>{value.name}</h6>
