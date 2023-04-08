@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import alertify from "alertifyjs";
 import { useNavigate } from "react-router-dom";
+import Global from "../global";
 
 const AddProduct = () => {
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const AddProduct = () => {
     },
   });
   if (id) {
-    axios.get(`http://localhost:5000/products/${id}`).then((res) => {
+    axios.get(`${Global.BASE_BACKEND_API}/products/${id}`).then((res) => {
       console.log(res.data);
       setValue("name", res.data.name);
       setValue("category", res.data.category);

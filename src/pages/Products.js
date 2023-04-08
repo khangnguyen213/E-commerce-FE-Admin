@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { useNavigate } from "react-router-dom";
 import alertify from "alertifyjs";
+import Global from "../global";
 
 const Products = () => {
   const [products, setProducts] = useState();
@@ -33,7 +34,7 @@ const Products = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products", {
+      .get(`${Global.BASE_BACKEND_API}/products`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -45,7 +46,7 @@ const Products = () => {
   const deleteProductHandler = (id) => {
     axios
       .post(
-        "http://localhost:5000/delete-product",
+        `${Global.BASE_BACKEND_API}/delete-product`,
         { productId: id },
         {
           withCredentials: true,

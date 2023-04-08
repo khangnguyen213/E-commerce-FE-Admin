@@ -7,6 +7,7 @@ import alertify from "alertifyjs";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Global from "../global";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -42,12 +43,16 @@ const Register = () => {
     //   })
     //   .catch((err) => console.log(err));
     axios
-      .post("http://localhost:5000/users/signup", JSON.stringify(requestBody), {
-        headers: {
-          "content-type": "application/json",
-        },
-        withCredentials: true,
-      })
+      .post(
+        `${Global.BASE_BACKEND_API}/users/signup`,
+        JSON.stringify(requestBody),
+        {
+          headers: {
+            "content-type": "application/json",
+          },
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         console.log(res.data);
         alertify.success(

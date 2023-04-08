@@ -8,6 +8,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { login } from "../Redux/Reducer/sessionSlice";
 import { useState } from "react";
+import Global from "../global";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -26,12 +27,16 @@ const Login = () => {
   const onSubmit = (data) => {
     const requestBody = { ...data, reqAdmin: true };
     axios
-      .post("http://localhost:5000/users/signin", JSON.stringify(requestBody), {
-        headers: {
-          "content-type": "application/json",
-        },
-        withCredentials: true,
-      })
+      .post(
+        `${Global.BASE_BACKEND_API}/users/signin`,
+        JSON.stringify(requestBody),
+        {
+          headers: {
+            "content-type": "application/json",
+          },
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         console.log(res.data);
         dispatch(login(res.data));

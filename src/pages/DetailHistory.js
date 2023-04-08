@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
 import styles from "./DetailHistory.module.css";
+import Global from "../global";
 // import HistoryAPI from "../../API/HistoryAPI";
 
 function DetailHistory(props) {
@@ -32,7 +33,7 @@ function DetailHistory(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/users/cart/${id}`)
+      .get(`${Global.BASE_BACKEND_API}/users/cart/${id}`)
       .then((res) => {
         console.log(res);
         setCart(res.data.cartItems);

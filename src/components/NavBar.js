@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { login, logout } from "../Redux/Reducer/sessionSlice";
 import alertify from "alertifyjs";
+import Global from "../global";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const NavBar = () => {
   useEffect(() => {
     if (!isLogged) {
       axios
-        .get("http://localhost:5000/check-session", {
+        .get(`${Global.BASE_BACKEND_API}/check-session`, {
           withCredentials: true,
         })
         .then((res) => {

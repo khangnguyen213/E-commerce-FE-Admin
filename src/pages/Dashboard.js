@@ -5,13 +5,14 @@ import Table from "react-bootstrap/Table";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import Alert from "react-bootstrap/Alert";
+import Global from "../global";
 
 const Dashboard = () => {
   const [carts, setCarts] = useState();
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:5000/admin/carts", {
+      .get(`${Global.BASE_BACKEND_API}/admin/carts`, {
         withCredentials: true,
       })
       .then((res) => {
