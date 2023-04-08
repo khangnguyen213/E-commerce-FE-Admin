@@ -41,7 +41,7 @@ const NavBar = () => {
 
   const logoutClickedHandler = () => {
     axios
-      .get("http://localhost:5000/users/logout", {
+      .get(`${Global.BASE_BACKEND_API}/users/logout`, {
         withCredentials: true,
       })
       .then((res) => {

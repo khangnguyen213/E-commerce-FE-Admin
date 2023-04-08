@@ -21,7 +21,7 @@ function App() {
         <Route path="/add-product/:id" element={<AddProduct />} />
         <Route path="/add-product" element={<AddProduct />} />
         <Route path="/chat" element={<Chat />} />
-        <Route path="/" element={<Navigate to="/dashboard" />} />
+        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="*" element={<Navigate to="/dashboard" />} />
       </Routes>
     </div>
