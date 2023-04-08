@@ -43,7 +43,7 @@ const AddProduct = () => {
     if (id) {
       axios
         .post(
-          "http://localhost:5000/edit-product",
+          `${Global.BASE_BACKEND_API}/edit-product`,
           { ...data, productId: id },
           {
             headers: {
@@ -63,7 +63,7 @@ const AddProduct = () => {
         .catch((err) => setErrSer(err.response.data.error.message));
     } else {
       axios
-        .post("http://localhost:5000/add-product", data, {
+        .post(`${Global.BASE_BACKEND_API}/add-product`, data, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
